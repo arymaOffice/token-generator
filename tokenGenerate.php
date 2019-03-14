@@ -2,7 +2,7 @@
 	ini_set('display_errors',1);
     error_reporting(E_ALL);
 
-$token = '123456789123565'; 
+$token = time();  
 
 
 
@@ -25,7 +25,7 @@ $GLOBALS['connect'] = $connect;
 
 
 
-echo $auth = 'INSERT INTO `phpauth_cookie_request` (`token`, `domain_id`) VALUES ( \''.$token.'\', \'2\');';
+$auth = 'INSERT INTO `phpauth_cookie_request` (`token`, `domain_id`) VALUES ( \''.$token.'\', \'2\');';
 mysqli_query($GLOBALS['connect'],$auth);
 
 header('Location: http://auth.condivision.cloud/index.php?cookie='.$token);
