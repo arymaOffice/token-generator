@@ -28,5 +28,4 @@ $GLOBALS['connect'] = $connect;
 $auth = 'INSERT INTO `phpauth_cookie_request` (`token`, `domain_id`) VALUES ( \''.$token.'\', \'2\');';
 mysqli_query($GLOBALS['connect'],$auth);
 
-header('Location: http://auth.condivision.cloud/index.php?cookie='.$token);
-exit;
+exit(header('Location: http://auth.condivision.cloud/index.php?cookie='.$token));
